@@ -1,13 +1,17 @@
 #include "MainComponent.h"
-#include "SevenGUIs.h"
 
 MainComponent::MainComponent()
 {
   setSize(600, 400);
-  Component* component = new Task0Component();
-  component->setBounds(getBounds());
-  addAndMakeVisible(component);
+}
+
+void MainComponent::setTaskComponent(juce::Component* component)
+{
   taskComponent.reset(component);
+  if (!taskComponent)
+    return;
+  taskComponent->setBounds(getBounds());
+  addAndMakeVisible(taskComponent.get());
 }
 
 void MainComponent::paint(juce::Graphics& g)

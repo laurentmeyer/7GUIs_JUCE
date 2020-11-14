@@ -11,11 +11,14 @@ class MainComponent : public juce::Component
 public:
   MainComponent();
 
+  void setTaskComponent(juce::Component*);
+
+  // juce::Component
   void paint(juce::Graphics&) override;
   void resized() override;
 
 private:
-  std::unique_ptr<Component> taskComponent;
+  std::unique_ptr<juce::Component> taskComponent;
 
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(MainComponent)
 };
