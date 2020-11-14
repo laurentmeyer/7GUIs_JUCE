@@ -1,14 +1,31 @@
 #pragma once
 #include <JuceHeader.h>
 
-class Task0Component : public juce::Label
+namespace sevenguis
+{
+
+class HelloWorld : public juce::Label
 {
 public:
-  Task0Component()
-  {
-    setText("Hello World!", juce::NotificationType::dontSendNotification);
-    setFont(juce::Font(16.0f));
-    setColour(juce::Label::textColourId, juce::Colours::white);
-    setJustificationType(juce::Justification::centred);
-  }
+  HelloWorld(juce::String message = "Hello, World!");
+
+  JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(HelloWorld)
 };
+
+class Counter : public juce::Component
+{
+public:
+  Counter();
+
+  // juce::Component
+  void resized() override;
+
+protected:
+  size_t value = 0;
+  juce::TextButton button;
+  juce::Label label;
+
+  JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Counter)
+};
+
+} // namespace sevenguis

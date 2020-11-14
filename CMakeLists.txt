@@ -11,7 +11,9 @@ juce_generate_juce_header(SevenGUIsApp)
 
 target_sources(SevenGUIsApp PRIVATE
     Main.cpp
-    MainComponent.cpp)
+    HelloWorld.cpp
+    Counter.cpp
+    )
 
 target_compile_definitions(SevenGUIsApp PRIVATE
     # JUCE_WEB_BROWSER and JUCE_USE_CURL would be on by default, but you might not need them.
