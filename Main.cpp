@@ -19,7 +19,7 @@ public:
   {
     // This method is where you should put your application's initialisation code..
     juce::ignoreUnused(commandLine);
-    mainWindow.reset(new MainWindow(new sevenguis::Counter));
+    mainWindow.reset(new MainWindow(new sevenguis::TemperatureConverter));
   }
 
   void shutdown() override

@@ -2,10 +2,13 @@ cmake_minimum_required(VERSION 3.12)
 
 project(SevenGUIs VERSION 0.0.1)
 
-add_subdirectory(JUCE)                    # If you've put JUCE in a subdirectory called JUCE
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+add_subdirectory(JUCE)
 
 juce_add_gui_app(SevenGUIsApp
-    PRODUCT_NAME "Seven GUIs App")     # The name of the final executable, which can differ from the target name
+    PRODUCT_NAME "Seven GUIs App")
 
 juce_generate_juce_header(SevenGUIsApp)
 
@@ -13,6 +16,7 @@ target_sources(SevenGUIsApp PRIVATE
     Main.cpp
     HelloWorld.cpp
     Counter.cpp
+    TemperatureConverter.cpp
     )
 
 target_compile_definitions(SevenGUIsApp PRIVATE
