@@ -1,5 +1,7 @@
-#pragma once
-#include <JuceHeader.h>
+#ifndef SEVEN_GUIS_H
+# define SEVEN_GUIS_H
+
+# include <juce_gui_basics/juce_gui_basics.h>
 
 namespace sevenguis
 {
@@ -49,3 +51,5 @@ protected:
 };
 
 } // namespace sevenguis
+
+#endif // SEVEN_GUIS_H

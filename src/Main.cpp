@@ -1,4 +1,4 @@
-#include "SevenGUIs.h"
+#include <SevenGUIs.h>
 
 //==============================================================================
 class GuiAppApplication : public juce::JUCEApplication

@@ -5,18 +5,18 @@ project(SevenGUIs VERSION 0.0.1)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_subdirectory(JUCE)
+add_subdirectory(extern/JUCE)
 
 juce_add_gui_app(SevenGUIsApp
     PRODUCT_NAME "Seven GUIs App")
 
-juce_generate_juce_header(SevenGUIsApp)
+target_include_directories(SevenGUIsApp PRIVATE include)
 
 target_sources(SevenGUIsApp PRIVATE
-    Main.cpp
-    HelloWorld.cpp
-    Counter.cpp
-    TemperatureConverter.cpp
+    src/Main.cpp
+    src/HelloWorld.cpp
+    src/Counter.cpp
+    src/TemperatureConverter.cpp
     )
 
 target_compile_definitions(SevenGUIsApp PRIVATE
@@ -27,4 +27,5 @@ target_compile_definitions(SevenGUIsApp PRIVATE
     JUCE_APPLICATION_VERSION_STRING="$<TARGET_PROPERTY:SevenGUIsApp,JUCE_VERSION>")
 
 target_link_libraries(SevenGUIsApp PRIVATE
-    juce::juce_gui_extra)
+    juce::juce_gui_extra
+    )
