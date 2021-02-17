@@ -17,6 +17,7 @@ target_sources(SevenGUIsApp PRIVATE
     src/HelloWorld.cpp
     src/Counter.cpp
     src/TemperatureConverter.cpp
+    src/FlightBooker.cpp
     )
 
 target_compile_definitions(SevenGUIsApp PRIVATE
